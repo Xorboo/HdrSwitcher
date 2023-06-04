@@ -1,0 +1,54 @@
+name: Release to GitHub
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  deploy:
+    runs-on: windows-latest
+
+    env:
+      PROJECT_PATH: HdrSwitcher/HdrSwitcher.csproj
+      RELEASE_PATH: HdrSwitcher/bin/Release/net6.0-windows/win-x64/publish
+      APP_NAME: HdrSwitcher.exe
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Restore
+        run: dotnet restore ${{ env.PPROJECT_PATH }}
+
+      - name: Build
+        run: dotnet build ${{ env.PPROJECT_PATH }} -c Release --no-restore
+
+      - name: Publish
+        run: dotnet publish ${{ env.PPROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+
+      - name: Update Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ env.RELEASE_PATH }}/${{ env.APP_NAME }}
+          asset_name: ${{ env.APP_NAME }}
+          asset_content_type: application/vnd.microsoft.portable-executable

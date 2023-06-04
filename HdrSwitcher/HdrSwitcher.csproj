@@ -3,12 +3,15 @@
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net6.0-windows</TargetFramework>
-        <Nullable>enable</Nullable>
-        <UseWindowsForms>true</UseWindowsForms>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <LangVersion>preview</LangVersion>
-        <ApplicationIcon>Resources\IconEnabled.ico</ApplicationIcon>
-    </PropertyGroup>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<LangVersion>preview</LangVersion>
+		<ApplicationIcon>Resources\IconEnabled.ico</ApplicationIcon>
+		<PublishSingleFile>true</PublishSingleFile>
+		<SelfContained>true</SelfContained>
+	</PropertyGroup>
 
     <ItemGroup>
       <Content Include="Resources\IconEnabled.ico" />
