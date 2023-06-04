@@ -2,7 +2,7 @@
 
 namespace HdrSwitcher
 {
-    public class MonitorTracker
+    internal class MonitorTracker
     {
         public enum MonitorState
         {

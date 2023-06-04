@@ -34,9 +34,12 @@ partial class FormMain
         notifyIcon = new NotifyIcon(components);
         contextMenuStrip = new ContextMenuStrip(components);
         monitorToolStripMenuItem = new ToolStripMenuItem();
-        toolStripMenuItem2 = new ToolStripSeparator();
+        settingsToolStripMenuItem = new ToolStripMenuItem();
+        autorunToolStripMenuItem = new ToolStripMenuItem();
+        separatorToolStripMenuItem = new ToolStripSeparator();
         exitToolStripMenuItem = new ToolStripMenuItem();
         checkTimer = new System.Windows.Forms.Timer(components);
+        label1 = new Label();
         contextMenuStrip.SuspendLayout();
         SuspendLayout();
         // 
@@ -51,9 +54,9 @@ partial class FormMain
         // contextMenuStrip
         // 
         contextMenuStrip.ImageScalingSize = new Size(20, 20);
-        contextMenuStrip.Items.AddRange(new ToolStripItem[] { monitorToolStripMenuItem, toolStripMenuItem2, exitToolStripMenuItem });
+        contextMenuStrip.Items.AddRange(new ToolStripItem[] { monitorToolStripMenuItem, settingsToolStripMenuItem, separatorToolStripMenuItem, exitToolStripMenuItem });
         contextMenuStrip.Name = "contextMenuStrip";
-        contextMenuStrip.Size = new Size(132, 58);
+        contextMenuStrip.Size = new Size(132, 82);
         contextMenuStrip.Opening += contextMenuStrip_Opening;
         // 
         // monitorToolStripMenuItem
@@ -62,10 +65,24 @@ partial class FormMain
         monitorToolStripMenuItem.Size = new Size(131, 24);
         monitorToolStripMenuItem.Text = "Monitor";
         // 
-        // toolStripMenuItem2
+        // settingsToolStripMenuItem
         // 
-        toolStripMenuItem2.Name = "toolStripMenuItem2";
-        toolStripMenuItem2.Size = new Size(128, 6);
+        settingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { autorunToolStripMenuItem });
+        settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+        settingsToolStripMenuItem.Size = new Size(131, 24);
+        settingsToolStripMenuItem.Text = "Settings";
+        // 
+        // autorunToolStripMenuItem
+        // 
+        autorunToolStripMenuItem.Name = "autorunToolStripMenuItem";
+        autorunToolStripMenuItem.Size = new Size(224, 26);
+        autorunToolStripMenuItem.Text = "Run on startup";
+        autorunToolStripMenuItem.Click += autorunToolStripMenuItem_Click;
+        // 
+        // separatorToolStripMenuItem
+        // 
+        separatorToolStripMenuItem.Name = "separatorToolStripMenuItem";
+        separatorToolStripMenuItem.Size = new Size(128, 6);
         // 
         // exitToolStripMenuItem
         // 
@@ -80,14 +97,25 @@ partial class FormMain
         checkTimer.Interval = 5000;
         checkTimer.Tick += checkTimer_Tick;
         // 
+        // label1
+        // 
+        label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+        label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+        label1.Location = new Point(12, 9);
+        label1.Name = "label1";
+        label1.Size = new Size(449, 184);
+        label1.TabIndex = 1;
+        label1.Text = "You weren't supposed to be able to get here you know";
+        label1.TextAlign = ContentAlignment.MiddleCenter;
+        // 
         // FormMain
         // 
-        AutoScaleDimensions = new SizeF(8F, 20F);
-        AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(800, 450);
+        AutoScaleMode = AutoScaleMode.None;
+        ClientSize = new Size(473, 202);
+        Controls.Add(label1);
         Icon = (Icon)resources.GetObject("$this.Icon");
         Name = "FormMain";
-        Text = "Form1";
+        Text = "HDR Switcher by Xorboo";
         contextMenuStrip.ResumeLayout(false);
         ResumeLayout(false);
     }
@@ -97,7 +125,10 @@ partial class FormMain
     private NotifyIcon notifyIcon;
     private ContextMenuStrip contextMenuStrip;
     private ToolStripMenuItem monitorToolStripMenuItem;
-    private ToolStripSeparator toolStripMenuItem2;
+    private ToolStripSeparator separatorToolStripMenuItem;
     private ToolStripMenuItem exitToolStripMenuItem;
     private System.Windows.Forms.Timer checkTimer;
+    private ToolStripMenuItem settingsToolStripMenuItem;
+    private ToolStripMenuItem autorunToolStripMenuItem;
+    private Label label1;
 }

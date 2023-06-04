@@ -17,6 +17,8 @@ public partial class FormMain : Form
 
         _tracker = new MonitorTracker(Properties.Settings.Default.MonitorIndex);
         UpdateMonitorState();
+
+        autorunToolStripMenuItem.Checked = AutorunManager.AutorunEnabled;
     }
 
 
@@ -67,6 +69,11 @@ public partial class FormMain : Form
 
         _tracker.ToggleHdrMode();
         UpdateMonitorState();
+    }
+
+    private void autorunToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        AutorunManager.AutorunEnabled = !AutorunManager.AutorunEnabled;
     }
 
     private void checkTimer_Tick(object sender, EventArgs e)
