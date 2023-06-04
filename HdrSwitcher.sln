@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HdrLibrary", "HdrLibrary\HdrLibrary.csproj", "{A09E901A-F24D-4474-95AA-0F0DD2DD2B94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{F270D442-F3D7-45B0-910C-D279C9865706}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HdrSwitcher", "HdrSwitcher\HdrSwitcher.csproj", "{9C6B0716-B345-4C86-8126-8FC2310B5B33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A09E901A-F24D-4474-95AA-0F0DD2DD2B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A09E901A-F24D-4474-95AA-0F0DD2DD2B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A09E901A-F24D-4474-95AA-0F0DD2DD2B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A09E901A-F24D-4474-95AA-0F0DD2DD2B94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F270D442-F3D7-45B0-910C-D279C9865706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F270D442-F3D7-45B0-910C-D279C9865706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F270D442-F3D7-45B0-910C-D279C9865706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F270D442-F3D7-45B0-910C-D279C9865706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C6B0716-B345-4C86-8126-8FC2310B5B33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C6B0716-B345-4C86-8126-8FC2310B5B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C6B0716-B345-4C86-8126-8FC2310B5B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C6B0716-B345-4C86-8126-8FC2310B5B33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
