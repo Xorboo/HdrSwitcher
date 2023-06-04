@@ -16,9 +16,9 @@ public partial class FormMain : Form
         InitializeComponent();
 
         _tracker = new MonitorTracker(Properties.Settings.Default.MonitorIndex);
-        UpdateMonitorState();
 
-        autorunToolStripMenuItem.Checked = AutorunManager.AutorunEnabled;
+        UpdateMonitorState();
+        UpdateAutorunState();
     }
 
 
@@ -74,6 +74,7 @@ public partial class FormMain : Form
     private void autorunToolStripMenuItem_Click(object sender, EventArgs e)
     {
         AutorunManager.AutorunEnabled = !AutorunManager.AutorunEnabled;
+        UpdateAutorunState();
     }
 
     private void checkTimer_Tick(object sender, EventArgs e)
@@ -100,6 +101,11 @@ public partial class FormMain : Form
             notifyIcon.Icon = GetStateIcon(state);
             notifyIcon.Text = $"[{state}] {monitor?.FriendlyName ?? "Unknown Monitor"}";
         }
+    }
+
+    private void UpdateAutorunState()
+    {
+        autorunToolStripMenuItem.Checked = AutorunManager.AutorunEnabled;
     }
 
     private Icon GetStateIcon(MonitorTracker.MonitorState state)
