@@ -6,8 +6,8 @@ Minimalistic taskbar tool to track and update HDR mode. Made with .NET 6, utiliz
 
 ## Installation
 
-- Go to Releases
-- Download latest [`HdrSwitcher.exe`](https://github.com/Xorboo/HdrSwitcher/releases/)
+- Go to [Releases](https://github.com/Xorboo/HdrSwitcher/releases/latest)
+- Download latest `HdrSwitcher.exe`
 - Run it (would only add an icon to the taskbar)
 - (Optional) Add to autorun
 
@@ -24,3 +24,7 @@ HdrSwitcher trackes selected monitor state and shows a green/red icon depending 
 - Left-click the icon to toggle HDR mode for the selected monitor
 
   ![OFF state](images/hdr_off.png) ![ON state](images/hdr_on.png)
+
+## Credits
+
+- Monitor icon based on [xnimrodx](https://www.flaticon.com/authors/xnimrodx) art
